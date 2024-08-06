@@ -25,6 +25,11 @@ def results(request, question_id):
 def vote(request, question_id):
     return HttpResponse("You are voting on question %s" % question_id)
 
+def vista_ensayo(request):
+    contexto = "hola"
+    return render(request,"polls/ensayo.html",{"context":contexto})
+
+
 
 # def index(request):
 #     latest_question_list = Question.objects.order_by("-pub_date")[:5]

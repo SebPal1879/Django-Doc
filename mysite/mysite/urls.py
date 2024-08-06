@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
+    path("test_docs/",include("test_docs.urls")),
     path("polls/",include("polls.urls")),#include() allows referencing other URLconfs, like the one in the app "polls"
     path('admin/', admin.site.urls),
 ]
