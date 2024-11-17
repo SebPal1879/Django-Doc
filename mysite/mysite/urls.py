@@ -16,10 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from debug_toolbar.toolbar import debug_toolbar_urls
+
 
 urlpatterns = [
+    path("calentamiento/",include("calentamiento.urls")),
+    path("sasuna/",include("sasuna.urls")),
+    path("lunica/",include("lunica.urls")),
+    path("generica1/",include("generica1.urls")),
     path("fast/",include("fast.urls")),
     path("test_docs/",include("test_docs.urls")),
     path("polls/",include("polls.urls")),#include() allows referencing other URLconfs, like the one in the app "polls"
     path('admin/', admin.site.urls),
-]
+] + debug_toolbar_urls()
+
